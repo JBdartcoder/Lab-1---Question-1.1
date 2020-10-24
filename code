@@ -45,18 +45,18 @@ class Car:
 
         # STEP 4: Plot solutions - plots open one after the other
 
-        # plot y vs time
+        # plot x vs time
         plt.plot(solution.t, solution.y[0].T)
         plt.grid()
         plt.xlabel('Time (s)')
-        plt.ylabel('y (m)')
+        plt.ylabel('x (m)')
         plt.show()
 
-        # plot x vs time
+        # plot y vs time
         plt.plot(solution.t, solution.y[1].T)
         plt.grid()
         plt.xlabel('Time (s)')
-        plt.ylabel('x (m)')
+        plt.ylabel('y (m)')
         plt.show()
 
         # plot theta vs time
@@ -67,6 +67,8 @@ class Car:
         plt.show()
 
 
-# Declare car with steering angle 2 deg for time 2s
+# Declare car with steering angle -2 deg for time 2s
+# Negative angle as it is clockwise
+# Frame of reference determines anticlockwise as +ve
 ronald = Car()
-ronald.move(np.deg2rad(2), 2)   # 2 deg converted to rads
+ronald.move(np.deg2rad(-2), 2)   # 2 deg converted to rads
